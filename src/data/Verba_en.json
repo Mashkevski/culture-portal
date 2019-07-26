@@ -1,0 +1,81 @@
+{
+  "name": "Vera Verba (nast .: Gertruda Petrovna Sokolova)",
+  "date": "January 14, 1942 - July 15, 2012",
+  "img": "verba.jpg",
+  "videoId": "",
+  "vita": "Belarusian poetess, translator",
+  "lng": "en",
+  "birthPlace": "Village Vysokiy Gorodets, Tolochinsky District, Vitebsk Region, BSSR, USSR",
+  "timelineData": [
+    {
+      "date": "1958 - 1964",
+      "text": "In 1958, V. Verba graduated from high school in Minsk and entered the philological faculty of the BSU, which she graduated in 1964."
+    },
+    {
+      "date": "1964",
+      "text": "Since 1964 - Member of the Union of Writers of the USSR."
+    },
+    {
+      "date": "1964 - 1969",
+      "text": "She worked as a freelance correspondent for the magazine «Youth»."
+    },
+    {
+      "date": "1969 - 1971",
+      "text": "She worked as a senior inspector of the literature propaganda department of the Book Trade Department of the State Committee for Press under the Council of Ministers of the BSSR."
+    },
+    {
+      "date": "1972",
+      "text": "Since 1972 - literary worker, then head of the department of letters and information of the editorial office of the newspaper «Literature and Masters”."
+    },
+    {
+      "date": "1977",
+      "text": "Since 1977 - freelance correspondent for the magazine Worker and Peasant."
+    },
+    {
+      "date": "1980",
+      "text": "Since 1980 - Worked in the magazine «Belarus»."
+    },
+    {
+      "date": "2012",
+      "text": "Died."
+    }
+  ],
+  "work": [
+    {
+      "title": "Poetry collection «Eyes of Spring»",
+      "date": "1962"
+    },
+    {
+      "title": "Poetry collection «White letters»",
+      "date": "1967"
+    },
+    {
+      "title": "Book of poems for children «Snowdrop»",
+      "date": "1968"
+    },
+    {
+      "title": "Poetry Collection «Leap Year»",
+      "date": "1969"
+    },
+    {
+      "title": "Poetry Collection «Blue Bay»",
+      "date": "1975"
+    },
+    {
+      "title": "Has translated into Belarusian the book «Wild Dog Dingo, or the Story of First Love» by R. Fraerman",
+      "date": "1975"
+    },
+    {
+      "title": "Collection of poetry «Alpha»",
+      "date": "1978"
+    },
+    {
+      "title": "A collection of poetry «My little planet»",
+      "date": "1982"
+    },
+    {
+      "title": "The book of selected poetry «Last September»",
+      "date": "1995"
+    }
+  ]
+}

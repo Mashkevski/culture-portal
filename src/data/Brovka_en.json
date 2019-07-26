@@ -1,0 +1,81 @@
+{
+	"name": "Petr Ustinovich Brovka",
+	"date": "June 25, 1905 - March 24, 1980",
+	"img": "brovka.jpg",
+	"videoId": "7xHGTr4EbK4",
+	"vita": "Belarusian Soviet writer, poet and translator, playwright, publicist. People\"s poet of the BSSR (1962). Academician of the Academy of Sciences of the BSSR (1966). Winner of the Lenin (1962) and two Stalin Prizes (1947, 1951). Deputy of the USSR Supreme Soviet since 1956. Member of the CPSU (b) since 1940",
+	"lng": "en",
+	"birthPlace": "Putilkovichi, Borisov district, Minsk province, Russian Empire",
+	"timelineData": [
+		{
+			"date": "1905",
+			"text": "Born on June 12 (25), 1905 in the village of Putilkovichi (now Ushachsky District, Vitebsk Region, Belarus) in a peasant family (9 children). Father - Ustin Adamovich. Mother - Alyona Stepanovna. Graduated from parish school in Lepel."
+		},
+		{
+			"date": "1918 - 1924",
+			"text": "He worked as a copyist, clerk and bookkeeper."
+		},
+		{
+			"date": "1925 - 1927",
+			"text": "He was deputy department of the Okrug Komsomol in Polotsk."
+		},
+		{
+			"date": "1927 - 1928",
+			"text": "He became executive secretary of the newspaper «Red Polachchyna»"
+		},
+		{
+			"date": "1928 - 1931",
+			"text": "Entered and graduated from the Faculty of Education of BSU."
+		},
+		{
+			"date": "1928",
+			"text": "Since 1928 - in the literary association «Maladnyak», later in the Belarusian Association of Proletarian Writers (BelAPW)."
+		},
+		{
+			"date": "1941 - 1942",
+			"text": "Served in the Red Army, worked in the front and partisan press."
+		},
+		{
+			"date": "1943 - 1945",
+			"text": "Was executive secretary of the JV BSSR."
+		},
+		{
+			"date": "1945 - 1948",
+			"text": "Was the chief editor of the literary magazine «Flame»"
+		},
+		{
+			"date": "1948 - 1967",
+			"text": "He was Chairman of the Board of the JV BSSR"
+		},
+		{
+			"date": "1967 - 1980",
+			"text": "He was the chief editor of the Belarusian Soviet Encyclopedia (now - «The Belarusian Encyclopedia named after P. Brovka»)"
+    },
+    {
+      "date": "1980",
+      "text": "Died in Minsk"
+    }
+	],
+	"work": [
+		{
+			"title": "«Selected Works»",
+			"date": "1934, 1945, 1947, 1948, 1951-"
+		},
+		{
+			"title": "«Collected Works: in 2 volumes»",
+			"date": "1957, 1969"
+		},
+		{
+			"title": "«Collected Works: in 4 volumesх»",
+			"date": "1965 - 1966"
+		},
+		{
+			"title": "«Collected Works: in 7 volumes»",
+			"date": "1975 - 1978"
+		},
+		{
+			"title": "«Collected Works: in 9 volumes»",
+			"date": "1987—1992"
+		}
+	]
+}

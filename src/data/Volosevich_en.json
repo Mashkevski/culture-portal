@@ -1,0 +1,77 @@
+{
+  "name": "Edward Stanislavovich Volosevich",
+  "date": "March 12, 1918 -",
+  "img": "volosevich.jpg",
+  "videoId": "",
+  "vita": "Belarusian writer, poet-Baykopist",
+  "lng": "en",
+  "birthPlace": "Mogilyov",
+  "timelineData": [
+    {
+      "date": "1935—1936",
+      "text": "He worked on the railway transport."
+    },
+    {
+	    "date": "1941",
+    	"text": "Graduated from Mogilyov Pedagogical University."
+    },
+    {
+	    "date": "1941",
+      "text": "From 1941 - Served in the Red Army."
+    },
+    {
+	    "date": "1943",
+      "text": "He was badly wounded."
+    },
+    {
+      "date": "1944",
+      "text": "He taught folklore and Russian literature in Mogilev Pedagogical Institute. He worked in the regional newspaper «For the Motherland» (Mogilev)."
+    },
+    {
+	  	"date": "1950",
+			"text": "Member of the Union of Writers of the USSR."
+		},
+    {
+	    "date": "1952",
+      "text": "Moved to Minsk."
+		},
+		{
+	    "date": "1970 - 1974",
+      "text": "Director of the Belarusian branch of the All-Union Office for the Protection of Copyright of the USSR Writers Union."
+    }
+  ],
+  "work": [
+    {
+      "title": "Debuted in print",
+			"date": "1938"
+		},
+    {
+      "title": "The book «Poems and fables»",
+      "date": "1954"
+    },
+    {
+      "title": "Collection of tales «Golden Fish»",
+      "date": "1957"
+    },
+    {
+      "title": "Collection of tales «What do you think - so have you»",
+      "date": "1958"
+    },
+    {
+      "title": "Collection of tales «Eagle Court»",
+      "date": "1959"
+		},
+		{
+			"title": "Collection of tales «Salt»",
+			"date": "1962"
+		},
+		{
+			"title": "Collection of tales «On the fun wave»",
+			"date": "1967"
+		},
+		{
+			"title": "Collection of tales «There and cancer with claws ...»",
+			"date": "1970"
+		}
+  ]
+}
