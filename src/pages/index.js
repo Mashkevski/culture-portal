@@ -1,21 +1,54 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import propTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout/layout';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+const IndexPage = ({ data }) => (
+  <Layout data={data}>
+    <h2>Index page</h2>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
+
+export const query = graphql`
+  query MyQuery {
+    allContentfulPoets {
+      edges {
+        node {
+          childContentfulPoetsPoetsIdJsonNode {
+            poets {
+              name
+              birthPlace
+              date
+              img
+              lng
+              timelineData {
+                date
+                text
+              }
+              videoId
+              vita
+              work {
+                date
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+IndexPage.propTypes = {
+  data: propTypes.shape({
+    allContentfulPoets: propTypes.shape({
+      edges: propTypes.array,
+    }),
+  }),
+};
+
+IndexPage.defaultProps = {
+  data: null,
+};
