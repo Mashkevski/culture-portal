@@ -1,0 +1,77 @@
+{
+  "name": "Pyotr Glebka",
+  "date": "June 23 (July 6), 1905 - December 18, 1969",
+  "img": "glebka.png",
+  "videoId": "",
+  "vita": "Belarusian Soviet poet, playwright, translator, organizer of science. Academician of the Academy of Sciences of the Belorussian SSR (1957). Member of the USSR Writers' Union (1934).",
+  "lng": "en",
+  "birthPlace": "Great Ussa village, now Uzda district, Minsk region",
+  "timelineData": [
+    {
+      "date": "1905",
+      "text": "He was born into a peasant family of Fedor and Tatiana Glebka."
+    },
+    {
+      "date": "1923",
+      "text": "He graduated from the seven-year school."
+    },
+    {
+      "date": "1924 - 1927",
+      "text": "He studied at the Belarusian Pedagogical College."
+    },
+    {
+      "date": "1928 - 1930",
+      "text": "He was the secretary of the magazine «Uzvyshshа» ."
+    },
+    {
+      "date": "1930",
+      "text": "He graduated from the literary and linguistic department of the Belarusian State University."
+    },
+    {
+      "date": "1930 - 1934",
+      "text": "He worked in the newspaper «The collective farmer of Belarus» , in the magazine «The Flame of Revolution» ."
+    },
+    {
+      "date": "1934 - 1936",
+      "text": "He served as a literary consultant at the Union of Writers of the Belorussian SSR."
+    },
+    {
+      "date": "1939 - 1945",
+      "text": "Participant of the Great Patriotic War. During the war he worked in the editorial «For Soviet Belarus»  newspaper «For free Belarus» . He was published on the pages of the newspaper-poster «Smash the fascist skunk»  and the newspaper «Guerrilla baton» . Since 1942 - a member of the CPSU. In 1943-1945 - the editor of the publishing house of the Central Committee of the Communist Party(b)B «Soviet Belarus» , chief editor of the State Publishing House of the BSSR in Moscow."
+    },
+    {
+      "date": "1945 - 1952",
+      "text": "He worked at the Institute of Literature, Language and Art of the Academy of Sciences of the Belorussian SSR."
+    },
+    {
+      "date": "1952 - 1956",
+      "text": "He was in charge of the lexicography sector. He led the group on the compilation of the Russian-Belarusian Dictionary (1953)."
+    },
+    {
+      "date": "1956 - 1969",
+      "text": "Since 1957 - the Director of the Institute of Linguistics. In 1957–1969, Glebka headed the institute of art history, ethnography, and folklore of the Academy of Sciences of the Belorussian SSR. In 1966-1969 - Academician-Secretary of the Department of Social Sciences of the Academy of Sciences of the Belorussian SSR. He was elected deputy of the Supreme Soviet of the Belorussian SSR in 1955-1967. Participated in the sessions of the UN General Assembly (1955, 1956, 1957, 1964)."
+    },
+    {
+      "date": "1969",
+      "text": "Pyotr Glebka died on the 18th of December in 1969. Buried at the Eastern Cemetery in Minsk."
+    }
+  ],
+  "work": [
+    {
+      "title": "«Selected Works»",
+      "date": "1952"
+    },
+    {
+      "title": "«Collected Works» in 2 volumes",
+      "date": "1958"
+    },
+    {
+      "title": "«Collected Works» in 3 volumes",
+      "date": "1969 - 1971"
+    },
+    {
+      "title": "«Collected Works» in 4 volumes",
+      "date": "1984 - 1986"
+    }
+  ]
+}

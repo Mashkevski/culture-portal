@@ -1,0 +1,73 @@
+{
+  "name": "Evdokia Los",
+  "date": "March 1, 1929 - July 3, 1977",
+  "img": "los.jpg",
+  "videoId": "BDrv8AY7oko",
+  "vita": "Belarusian Soviet writer, poet, translator, journalist. Member of the Writers' Union of the USSR (1957). Her work is considered to be one of the best pages of Belarusian female poetry of the twentieth century.",
+  "lng": "en",
+  "birthPlace": "Starina village, Ushachy district, Vitebsk region, Belorussian SSR, USSR",
+  "timelineData": [
+    {
+      "date": "1929",
+      "text": "She was born in a peasant family."
+    },
+    {
+      "date": "1934",
+      "text": "The family moved to Ushachi. Before the beginning of World War II she graduated from 5 classes."
+    },
+    {
+      "date": "1945 - 1948",
+      "text": "After graduating from the Ushachsky seven-year school, she studied at the school department of the Glubokoe Pedagogical School."
+    },
+    {
+      "date": "1951 - 1952",
+      "text": "She was a literary worker of the Belarusian youth newspaper «Chyrvonya Zmena», a children's newspaper «Dawn»."
+    },
+    {
+      "date": "1952 - 1959",
+      "text": "She was the editor of the Teaching and Pedagogical Publishing House of the Byelorussian SSR. In 1955 she graduated from the Faculty of Philology of the Minsk Pedagogical Institute named after M. Gorky."
+    },
+    {
+      "date": "1960",
+      "text": "She graduated from the Higher Literary Courses in Moscow."
+    },
+    {
+      "date": "1961 - 1962",
+      "text": "She was the editor of the Teaching and Pedagogical Publishing House of the Byelorussian SSR, a literary employee of the Belarusian newspaper «Zvyazda»."
+    },
+    {
+      "date": "1963 - 1970",
+      "text": "She was on creative work."
+    },
+    {
+      "date": "1970 - 1972",
+      "text": "Worked as executive secretary of the «Workers and peasants» magazine."
+    },
+    {
+      "date": "1975 - 1977",
+      "text": "She was the chief editor of the children's magazine «Vyaselka»."
+    },
+    {
+      "date": "1977",
+      "text": "Evdokia Los died on July 3, 1977."
+    }
+  ],
+  "work": [
+    {
+      "title": "«Kind people»",
+      "date": "1963"
+    },
+    {
+      "title": "«The Pass (poems)»",
+      "date": "1971"
+    },
+    {
+      "title": "«The apple branch»",
+      "date": "1973"
+    },
+    {
+      "title": "«Lyrics of July (poems)»",
+      "date": "1977"
+    }
+  ]
+}
