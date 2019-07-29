@@ -1,0 +1,48 @@
+.author {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "name photo"
+    "date photo"
+    "vita photo"
+    "button photo";
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #039BE5;
+}
+
+.author_title {
+  grid-area: header;
+  padding: 10px;
+  color: white;
+  background-color: #039BE5;
+}
+
+.author_name {
+  grid-area: name;
+  padding: 15px;
+  color: #0277BD;
+}
+
+.author_date {
+  grid-area: date;
+  padding: 15px;
+  color: #607D8B;
+}
+
+.author_vita {
+  grid-area: vita;
+  padding: 10px;
+}
+
+.author_photo {
+  grid-area: photo;
+  padding: 10px;
+}
+
+.author_btn {
+  grid-area: button;
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
