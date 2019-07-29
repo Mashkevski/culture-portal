@@ -62,3 +62,31 @@ main {
   font-size: 22px;
   color: #fff
 }
+
+@media only screen and (max-width: 1050px) {
+  .search-input {
+    width: 650px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .search-input {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .search-input {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .search-input {
+    width: 150px;
+  }
+
+  .search-widget-authors-links--button>span {
+    font-size: 16px;
+  }
+}
