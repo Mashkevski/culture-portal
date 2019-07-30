@@ -21,7 +21,7 @@ export default injectIntl(Poet);
 
 export const query = graphql`
   query($slug: String!) {
-    allContentfulPoetDescription(filter: {title: {eq: $slug}}) {
+    allContentfulPoetDescription(filter: {node_locale: {eq: "en-US"}, title: {eq: $slug}}) {
       edges {
         node {
           poet {

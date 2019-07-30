@@ -1,4 +1,3 @@
-/* eslint-disablel */
 import React from 'react';
 import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
