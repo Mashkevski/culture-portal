@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
+import Language from '../language';
 
 const Header = () => (
   <header
     style={{
       background: 'rebeccapurple',
       marginBottom: '1.45rem',
+      position: 'relative',
     }}
   >
     <h1
@@ -14,7 +16,7 @@ const Header = () => (
         color: 'white',
       }}
     >
-      Poets of Belarus
+      <FormattedMessage id="siteTitle" />
     </h1>
     <Link
       to="/"
@@ -24,7 +26,7 @@ const Header = () => (
         marginRight: '10px',
       }}
     >
-        Home
+      <FormattedMessage id="home" />
     </Link>
 
     <Link
@@ -34,9 +36,18 @@ const Header = () => (
         textDecoration: 'none',
       }}
     >
-      Search
+      <FormattedMessage id="search" />
     </Link>
+    <div
+      style={{
+        position: 'absolute',
+        right: '0',
+        top: '0',
+      }}
+    >
+      <Language />
+    </div>
   </header>
 );
 
-export default Header;
+export default injectIntl(Header);
