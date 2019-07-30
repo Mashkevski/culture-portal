@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
 
 import Layout from '../../components/layout/layout';
+import PhotoGallery from './photoGallery/PhotoGallery';
 
 const Poet = ({ data }) => {
   const { poet } = data.contentfulPoetDescription;
@@ -11,6 +12,7 @@ const Poet = ({ data }) => {
     <Layout>
       <h2>{poet.name}</h2>
       <img alt={poet.name} src={url} />
+      <PhotoGallery data={url} />
     </Layout>
   );
 };
