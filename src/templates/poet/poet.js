@@ -6,13 +6,13 @@ import Layout from '../../components/layout/layout';
 import PhotoGallery from './photoGallery/PhotoGallery';
 
 const Poet = ({ data }) => {
-  const { poet } = data.contentfulPoetDescription;
+  const { poet, images } = data.contentfulPoetDescription;
   const { url } = data.contentfulPoetPicture.image.file;
   return (
     <Layout>
       <h2>{poet.name}</h2>
       <img alt={poet.name} src={url} />
-      <PhotoGallery data={url} />
+      <PhotoGallery gallery={images} />
     </Layout>
   );
 };
