@@ -7,6 +7,16 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-intl',
+      options: {
+        path: `${__dirname}/src/data/intl`,
+        languages: ['en', 'ru', 'by'],
+        defaultLanguage: 'ru',
+        redirect: true,
+
+      },
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
