@@ -5,6 +5,7 @@ import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
 
 import Layout from '../../components/layout/layout';
+import PhotoGallery from './photoGallery/PhotoGallery';
 import Timeline from '../../components/timeline/timeline';
 
 const Poet = ({ data, intl }) => {
@@ -16,9 +17,7 @@ const Poet = ({ data, intl }) => {
       <h2>{poet.name}</h2>
       <img alt={poet.name} src={image.file.url} />
       <Timeline poet={poet} />
-      <ul>
-        {images.map((img, i) => <li key={i}><img src={img.file.url} alt={poet.name} /></li>)}
-      </ul>
+      {images !== null && <PhotoGallery gallery={images} />}
     </Layout>
   );
 };
