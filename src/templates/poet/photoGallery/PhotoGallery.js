@@ -7,7 +7,7 @@ import styles from './photoGallery.module.css';
 
 
 const PhotoGallery = ({ gallery }) => {
-  const images = gallery.map(img => ({ original: img, thumbnail: img }));
+  const images = gallery.map(img => ({ original: img.file.url, thumbnail: img.file.url }));
 
   return (
     <div className={styles.photo_gallery_wrapper}>
