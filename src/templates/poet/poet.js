@@ -1,60 +1,74 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
+import { injectIntl } from 'gatsby-plugin-intl';
 
 import Layout from '../../components/layout/layout';
 import PhotoGallery from './photoGallery/PhotoGallery';
+import Timeline from '../../components/timeline/timeline';
 
-const Poet = ({ data }) => {
-  const { poet, images } = data.contentfulPoetDescription;
-  const { url } = data.contentfulPoetPicture.image.file;
+const Poet = ({ data, intl }) => {
+  const { node } = data.allContentfulPoetDescription.edges
+    .find(edge => edge.node.poet.lng === intl.locale);
+  const { poet, image, images } = node;
   return (
     <Layout>
       <h2>{poet.name}</h2>
-      <img alt={poet.name} src={url} />
-      <PhotoGallery gallery={images} />
+      <img alt={poet.name} src={image.file.url} />
+      <Timeline poet={poet} />
+      {images !== null && <PhotoGallery gallery={images} />}
     </Layout>
   );
 };
 
-export default Poet;
+export default injectIntl(Poet);
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulPoetDescription(title: {eq: $slug}) {
-      poet {
-        name
-        birthPlace
-        date
-        img
-        lng
-        videoId
-        vita
-        timelineData {
-          date
-          text
+    allContentfulPoetDescription(filter: {node_locale: {eq: "en-US"}, title: {eq: $slug}}) {
+      edges {
+        node {
+          poet {
+            birthPlace
+            date
+            lng
+            name
+            timelineData {
+              date
+              text
+            }
+            videoId
+            vita
+            work {
+              date
+              title
+            }
+          }
+          image {
+            file {
+              url
+            }
+          }
+          images {
+            file {
+              url
+            }
+          }
         }
-        work {
-          date
-          title
-        }
-      }
-    }
-    contentfulPoetPicture(image: {title: {eq: $slug}}) {
-      image {
-        file {
-          url
-        }
-        title
       }
     }
   }
 `;
 
 Poet.propTypes = {
-  data: propTypes.string,
+  data: propTypes.shape({
+    allContentfulPoetDescription: propTypes.shape({
+      edges: propTypes.array,
+    }),
+  }).isRequired,
+  intl: propTypes.shape({
+    locale: propTypes.string.isRequired,
+  }).isRequired,
 };
 
-Poet.defaultProps = {
-  data: '',
-};
