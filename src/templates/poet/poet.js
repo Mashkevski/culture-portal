@@ -71,4 +71,3 @@ Poet.propTypes = {
     locale: propTypes.string.isRequired,
   }).isRequired,
 };
-
