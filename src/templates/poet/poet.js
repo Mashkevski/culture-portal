@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
@@ -13,11 +14,10 @@ const Poet = ({ data, intl }) => {
   return (
     <Layout>
       <h2>{poet.name}</h2>
-      <img alt={poet.name} src={url} />
-      <Timeline poet={poet} />
       <img alt={poet.name} src={image.file.url} />
+      <Timeline poet={poet} />
       <ul>
-        {images.map(img => <li><img src={img.file.url} alt={poet.name} /></li>)}
+        {images.map((img, i) => <li key={i}><img src={img.file.url} alt={poet.name} /></li>)}
       </ul>
     </Layout>
   );
@@ -72,3 +72,4 @@ Poet.propTypes = {
     locale: propTypes.string.isRequired,
   }).isRequired,
 };
+
