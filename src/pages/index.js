@@ -10,20 +10,8 @@ const IndexPage = ({ data }) => {
   const { url } = image.file;
   return (
     <Layout>
-      <div style={{
-        background: '#dddddd',
-        width: '50%',
-        margin: '0 auto',
-      }}
-      >
-        <h3>Author of the day</h3>
-        <h4>{poet.name}</h4>
-        <img alt={poet.name} src={url} />
-        <p>{poet.date}</p>
-        <p>{poet.vita}</p>
-      </div>
-    <AuthorOfTheDay data={data} />
-  </Layout>
+      <AuthorOfTheDay poet={poet} url={url} />
+    </Layout>
   );
 };
 
