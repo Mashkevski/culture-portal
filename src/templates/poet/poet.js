@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
@@ -5,20 +6,25 @@ import { injectIntl } from 'gatsby-plugin-intl';
 
 import Layout from '../../components/layout/layout';
 import Timeline from '../../components/timeline/timeline';
+import VitaComponent from '../../components/vita/vita';
 
 const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
-  const { poet, image, images } = node;
+  const { poet, image } = node;
+  const idOfAuthor = poet.img.replace(/.jpg/gi, '');
   return (
     <Layout>
-      <h2>{poet.name}</h2>
-      <img alt={poet.name} src={url} />
+      <VitaComponent
+        img={image.file.url}
+        name={poet.name}
+        liveDates={poet.date}
+        lng={poet.lng}
+        birthPlace={poet.birthPlace}
+        vita={poet.vita}
+        id={idOfAuthor}
+      />
       <Timeline poet={poet} />
-      <img alt={poet.name} src={image.file.url} />
-      <ul>
-        {images.map(img => <li><img src={img.file.url} alt={poet.name} /></li>)}
-      </ul>
     </Layout>
   );
 };
@@ -33,6 +39,7 @@ export const query = graphql`
           poet {
             birthPlace
             date
+            img
             lng
             name
             timelineData {
