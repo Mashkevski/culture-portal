@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
 
-import Layout from '../../components/layout/layout';
+import Layout from '../components/layout/layout';
 
 const Poet = ({ data }) => {
   const { poet } = data.contentfulPoetDescription;
@@ -13,6 +13,14 @@ const Poet = ({ data }) => {
       <img alt={poet.name} src={url} />
     </Layout>
   );
+};
+
+Poet.propTypes = {
+  data: propTypes.string,
+};
+
+Poet.defaultProps = {
+  data: '',
 };
 
 export default Poet;
@@ -48,11 +56,3 @@ export const query = graphql`
     }
   }
 `;
-
-Poet.propTypes = {
-  data: propTypes.string,
-};
-
-Poet.defaultProps = {
-  data: '',
-};
