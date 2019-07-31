@@ -5,7 +5,7 @@ import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
 
 import Layout from '../../components/layout/layout';
-import PhotoGallery from './photoGallery/PhotoGallery';
+import PhotoGallery from '../../components/photoGallery/PhotoGallery';
 import Timeline from '../../components/timeline/timeline';
 
 const Poet = ({ data, intl }) => {
