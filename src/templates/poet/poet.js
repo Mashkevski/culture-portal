@@ -5,13 +5,14 @@ import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
 
 import Layout from '../../components/layout/layout';
+import PhotoGallery from '../../components/photoGallery/PhotoGallery';
 import Timeline from '../../components/timeline/timeline';
 import VitaComponent from '../../components/vita/vita';
 
 const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
-  const { poet, image } = node;
+  const { poet, image, images } = node;
   const idOfAuthor = poet.img.replace(/.jpg/gi, '');
   return (
     <Layout>
@@ -25,6 +26,7 @@ const Poet = ({ data, intl }) => {
         id={idOfAuthor}
       />
       <Timeline poet={poet} />
+      {images !== null && <PhotoGallery gallery={images} />}
     </Layout>
   );
 };
