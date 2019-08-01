@@ -5,17 +5,26 @@ import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
 
 import Layout from '../../components/layout/layout';
-import PhotoGallery from './photoGallery/PhotoGallery';
+import PhotoGallery from '../../components/photoGallery/PhotoGallery';
 import Timeline from '../../components/timeline/timeline';
+import VitaComponent from '../../components/vita/vita';
 
 const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
   const { poet, image, images } = node;
+  const idOfAuthor = poet.img.replace(/.jpg/gi, '');
   return (
     <Layout>
-      <h2>{poet.name}</h2>
-      <img alt={poet.name} src={image.file.url} />
+      <VitaComponent
+        img={image.file.url}
+        name={poet.name}
+        liveDates={poet.date}
+        lng={poet.lng}
+        birthPlace={poet.birthPlace}
+        vita={poet.vita}
+        id={idOfAuthor}
+      />
       <Timeline poet={poet} />
       {images !== null && <PhotoGallery gallery={images} />}
     </Layout>
@@ -32,6 +41,7 @@ export const query = graphql`
           poet {
             birthPlace
             date
+            img
             lng
             name
             timelineData {
