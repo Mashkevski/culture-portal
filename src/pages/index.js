@@ -3,24 +3,14 @@ import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
+import AuthorOfTheDay from '../components/authorOfTheDay/authorOfTheDay';
 
 const IndexPage = ({ data }) => {
   const { poet, image } = data.contentfulPoetDescription;
   const { url } = image.file;
   return (
     <Layout>
-      <div style={{
-        background: '#dddddd',
-        width: '50%',
-        margin: '0 auto',
-      }}
-      >
-        <h3>Author of the day</h3>
-        <h4>{poet.name}</h4>
-        <img alt={poet.name} src={url} />
-        <p>{poet.date}</p>
-        <p>{poet.vita}</p>
-      </div>
+      <AuthorOfTheDay poet={poet} url={url} />
     </Layout>
   );
 };
