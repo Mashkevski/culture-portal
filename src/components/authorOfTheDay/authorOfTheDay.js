@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { lightBlue } from '@material-ui/core/colors';
-import PropTypes from 'prop-types';
+
 import styles from './authorOfTheDay.module.css';
 
 
@@ -20,7 +21,7 @@ const ColorButton = withStyles(theme => ({
 const AuthorOfTheDay = ({ poet, url }) => (
   <div className={styles.author}>
     <h2 className={styles.author_title}>
-        Author of the day
+      <FormattedMessage id="author_of_the_day_title" />
     </h2>
     <h3 className={styles.author_name}>
       {poet.name}
