@@ -1,7 +1,7 @@
-/* eslint-disable arrow-body-style */
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { injectIntl } from 'gatsby-plugin-intl';
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/layout/layout';
 import SearchInput from '../components/SearchInput';
@@ -22,8 +22,10 @@ const useStyles = makeStyles({
   },
 });
 
-const Poets = ({ data }) => {
-  const initialPoets = useState(data.allContentfulPoetDescription.edges)[0];
+const Poets = ({ data, intl }) => {
+  const initialPoets = useState(
+    data.allContentfulPoetDescription.edges.filter(edge => edge.node.poet.lng === intl.locale)
+  )[0];
   const [poets, setPoets] = useState(initialPoets);
 
   const classes = useStyles();
@@ -55,6 +57,7 @@ Poets.propTypes = {
               date: propTypes.string.isRequired,
               birthPlace: propTypes.string.isRequired,
               vita: propTypes.string.isRequired,
+              lng: propTypes.string.isRequired,
             }).isRequired,
             title: propTypes.string.isRequired,
           }).isRequired,
@@ -62,9 +65,12 @@ Poets.propTypes = {
       ).isRequired,
     }).isRequired,
   }).isRequired,
+  intl: propTypes.shape({
+    locale: propTypes.string.isRequired,
+  }).isRequired
 };
 
-export default Poets;
+export default injectIntl(Poets);
 
 export const query = graphql`
   query searchQuery {
@@ -77,6 +83,7 @@ export const query = graphql`
             birthPlace
             date
             vita
+            lng
           }
           title
         }

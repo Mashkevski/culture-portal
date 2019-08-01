@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link, injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'gatsby';
+import Language from '../language';
 
 const useStyles = makeStyles({
   header: {
@@ -27,6 +28,9 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     borderBottom: '2px solid white',
   },
+  language: {
+    marginLeft: 20,
+  },
 });
 
 const Header = () => {
@@ -34,7 +38,9 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <Link to="/" className={classes.link}>
-        <h1 className={classes.logo}>Poets of Belarus</h1>
+        <h1 className={classes.logo}>
+          <FormattedMessage id="siteTitle" />
+        </h1>
       </Link>
       <nav className={classes.rightMenu}>
         <Link
@@ -42,18 +48,21 @@ const Header = () => {
           className={classes.link}
           activeClassName={classes.activeLink}
         >
-          Home
+          <FormattedMessage id="home" />
         </Link>
         <Link
           to="/poets"
           className={classes.link}
           activeClassName={classes.activeLink}
         >
-          Poets
+          <FormattedMessage id="poets" />
         </Link>
+        <div className={classes.language}>
+          <Language />
+        </div>
       </nav>
     </header>
   );
 };
 
-export default Header;
+export default injectIntl(Header);

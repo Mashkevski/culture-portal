@@ -1,57 +1,81 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
-
+import { injectIntl } from 'gatsby-plugin-intl';
 import Layout from '../components/layout/layout';
+import PhotoGallery from '../components/photoGallery/PhotoGallery';
+import Timeline from '../components/timeline/timeline';
+import VitaComponent from '../components/vita/vita';
 
-const Poet = ({ data }) => {
-  const { poet } = data.contentfulPoetDescription;
-  const { url } = data.contentfulPoetPicture.image.file;
+const Poet = ({ data, intl }) => {
+  const { node } = data.allContentfulPoetDescription.edges
+    .find(edge => edge.node.poet.lng === intl.locale);
+  const { poet, image, images } = node;
+  const idOfAuthor = poet.img.replace(/.jpg/gi, '');
   return (
     <Layout>
-      <h2>{poet.name}</h2>
-      <img alt={poet.name} src={url} />
+      <VitaComponent
+        img={image.file.url}
+        name={poet.name}
+        liveDates={poet.date}
+        lng={poet.lng}
+        birthPlace={poet.birthPlace}
+        vita={poet.vita}
+        id={idOfAuthor}
+      />
+      <Timeline poet={poet} />
+      {images && <PhotoGallery gallery={images} />}
     </Layout>
   );
 };
 
 Poet.propTypes = {
-  data: propTypes.string,
+  data: propTypes.shape({
+    allContentfulPoetDescription: propTypes.shape({
+      edges: propTypes.array,
+    }),
+  }).isRequired,
+  intl: propTypes.shape({
+    locale: propTypes.string.isRequired,
+  }).isRequired,
 };
 
-Poet.defaultProps = {
-  data: '',
-};
-
-export default Poet;
+export default injectIntl(Poet);
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulPoetDescription(title: {eq: $slug}) {
-      poet {
-        name
-        birthPlace
-        date
-        img
-        lng
-        videoId
-        vita
-        timelineData {
-          date
-          text
+    allContentfulPoetDescription(filter: {node_locale: {eq: "en-US"}, title: {eq: $slug}}) {
+      edges {
+        node {
+          poet {
+            birthPlace
+            date
+            img
+            lng
+            name
+            timelineData {
+              date
+              text
+            }
+            videoId
+            vita
+            work {
+              date
+              title
+            }
+          }
+          image {
+            file {
+              url
+            }
+          }
+          images {
+            file {
+              url
+            }
+          }
         }
-        work {
-          date
-          title
-        }
-      }
-    }
-    contentfulPoetPicture(image: {title: {eq: $slug}}) {
-      image {
-        file {
-          url
-        }
-        title
       }
     }
   }
