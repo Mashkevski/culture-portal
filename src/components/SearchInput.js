@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
+import { injectIntl } from 'gatsby-plugin-intl';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-const SearchInput = ({ poets, setPoets }) => {
+const SearchInput = ({ poets, setPoets, intl }) => {
   const [inputValue, setInputValue] = useState('');
   const [selectValue, setSelectValue] = useState('name');
 
@@ -45,7 +46,7 @@ const SearchInput = ({ poets, setPoets }) => {
       <TextField
         className={classes.input}
         id="searchForPoets"
-        label="Search"
+        label={intl.messages['search.value']}
         value={inputValue}
         onChange={handleInputChange}
         variant="outlined"
@@ -56,8 +57,8 @@ const SearchInput = ({ poets, setPoets }) => {
         onChange={handleSelectChange}
         native
       >
-        <option value="name">By name</option>
-        <option value="birthPlace">By birth place</option>
+        <option value="name">{ intl.messages['search.params.name'] }</option>
+        <option value="birthPlace">{ intl.messages['search.params.birthPlace'] }</option>
       </Select>
     </div>
   );
@@ -75,6 +76,13 @@ SearchInput.propTypes = {
     }).isRequired,
   ).isRequired,
   setPoets: propTypes.func.isRequired,
+  intl: propTypes.shape({
+    messages: propTypes.shape({
+      'search.value': propTypes.string.isRequired,
+      'search.params.name': propTypes.string.isRequired,
+      'search.params.birthPlace': propTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
-export default SearchInput;
+export default injectIntl(SearchInput);

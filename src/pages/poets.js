@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 
 const Poets = ({ data, intl }) => {
   const initialPoets = useState(
-    data.allContentfulPoetDescription.edges.filter(edge => edge.node.poet.lng === intl.locale)
+    data.allContentfulPoetDescription.edges.filter(edge => edge.node.poet.lng === intl.locale),
   )[0];
   const [poets, setPoets] = useState(initialPoets);
 
@@ -37,7 +37,7 @@ const Poets = ({ data, intl }) => {
           {
             poets.length
               ? poets.map(({ node }) => <PoetCard key={node.poet.id} data={node} />)
-              : <h3>Nothing found</h3>
+              : <h3>{ intl.messages['search.nothing'] }</h3>
           }
         </div>
       </div>
@@ -67,7 +67,10 @@ Poets.propTypes = {
   }).isRequired,
   intl: propTypes.shape({
     locale: propTypes.string.isRequired,
-  }).isRequired
+    messages: propTypes.shape({
+      'search.nothing': propTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default injectIntl(Poets);

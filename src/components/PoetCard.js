@@ -1,11 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Link, FormattedMessage } from 'gatsby-plugin-intl';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'gatsby';
 
 const PoetCard = ({ data }) => (
   <Card>
@@ -26,7 +26,7 @@ const PoetCard = ({ data }) => (
     <CardActions>
       <Link to={`/${data.title}`} style={{ textDecoration: 'none' }}>
         <Button size="small" color="primary">
-          Learn more
+          <FormattedMessage id="button" />
         </Button>
       </Link>
     </CardActions>
