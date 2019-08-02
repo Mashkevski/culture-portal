@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
@@ -15,6 +14,8 @@ const Poet = ({ data, intl }) => {
     .find(edge => edge.node.poet.lng === intl.locale);
   const { poet, image, images } = node;
   const idOfAuthor = poet.img.replace(/.jpg/gi, '');
+  const { timelineData } = node.poet;
+  const places = timelineData.filter(place => place.lng && place.lat);
   return (
     <Layout>
       <VitaComponent
@@ -35,14 +36,11 @@ const Poet = ({ data, intl }) => {
           backgroundColor: 'grey',
         }}
       >
-        <div>
-          <GoogleMap />
-        </div>
+        <GoogleMap places={places} />
       </div>
     </Layout>
   );
 };
-
 export default injectIntl(Poet);
 
 export const query = graphql`
@@ -59,6 +57,8 @@ export const query = graphql`
             timelineData {
               date
               text
+              lat
+              lng
             }
             videoId
             vita
