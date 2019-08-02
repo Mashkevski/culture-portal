@@ -1,22 +1,16 @@
 import React from 'react';
 import propTypes from 'prop-types';
-
 import Header from '../header/header';
 import './layout.css';
 
 const Layout = ({ children }) => (
   <>
     <Header />
-    <main>
+    <main className="page-main">
       {children}
     </main>
-    <footer>
-      footer
-    </footer>
   </>
 );
-
-export default Layout;
 
 Layout.propTypes = {
   children: propTypes.node.isRequired,
@@ -30,3 +24,5 @@ Layout.propTypes = {
 Layout.defaultProps = {
   data: null,
 };
+
+export default Layout;

@@ -1,7 +1,15 @@
 {
   "siteTitle": "Поэты Беларуси",
   "home": "Главная",
-  "search": "Поиск",
+  "poets": "Поэты",
   "author_of_the_day_title": "Автор дня",
-  "button": "Подробнее"
+  "button": "Подробнее",
+  "search": {
+    "value": "Поиск",
+    "params": {
+      "name": "По имени",
+      "birthPlace": "По месту рождения"
+    },
+    "nothing": "Ничего не найдено"
+  }
 }
