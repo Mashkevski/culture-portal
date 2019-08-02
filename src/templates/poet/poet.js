@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
@@ -8,6 +7,7 @@ import Layout from '../../components/layout/layout';
 import PhotoGallery from '../../components/photoGallery/PhotoGallery';
 import Timeline from '../../components/timeline/timeline';
 import VitaComponent from '../../components/vita/vita';
+import VideoComponent from '../../components/youtubeWidget/youtubeComponent';
 
 const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
@@ -27,6 +27,7 @@ const Poet = ({ data, intl }) => {
       />
       <Timeline poet={poet} />
       {images !== null && <PhotoGallery gallery={images} />}
+      {poet.videoId !== '' && <VideoComponent id={poet.videoId} />}
     </Layout>
   );
 };

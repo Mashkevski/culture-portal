@@ -1,0 +1,17 @@
+.parent-of-video {
+  display: grid;
+  justify-content: center;
+  margin-top: 50px;
+  height: 60px;
+}
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  text-align: center;
+  background-color: #039BE5;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 22px;
+}
