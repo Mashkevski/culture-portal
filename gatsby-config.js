@@ -13,7 +13,6 @@ module.exports = {
         languages: ['en', 'ru', 'by'],
         defaultLanguage: 'ru',
         redirect: true,
-
       },
     },
     {

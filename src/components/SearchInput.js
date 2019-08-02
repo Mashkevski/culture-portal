@@ -15,8 +15,10 @@ const useStyles = makeStyles({
   container: {
     display: 'flex',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
   input: {
+    minWidth: 315,
     flex: 1,
   },
   select: {

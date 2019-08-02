@@ -1,32 +1,32 @@
 import React from 'react';
 import { Link, injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import { makeStyles } from '@material-ui/core/styles';
-import Language from '../language';
+import Language from '../Language';
 
 const useStyles = makeStyles({
   header: {
     display: 'flex',
     alignItems: 'center',
-    padding: 10,
-    backgroundColor: 'blue',
+    height: 50,
+    padding: '10px 20px',
   },
   logo: {
-    fontSize: 24,
+    fontSize: 28,
   },
   rightMenu: {
+    display: 'flex',
+    alignItems: 'center',
     marginLeft: 'auto',
   },
   link: {
+    padding: 5,
     fontSize: 20,
-    color: 'white',
+    color: '#039BE5',
     textDecoration: 'none',
-    '&:not(:first-child)': {
-      marginLeft: 10,
-    },
   },
   activeLink: {
     fontWeight: 'bold',
-    borderBottom: '2px solid white',
+    borderBottom: '2px solid #039BE5',
   },
   language: {
     marginLeft: 20,
