@@ -1,4 +1,4 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable */
 import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
@@ -8,6 +8,7 @@ import Layout from '../../components/layout/layout';
 import PhotoGallery from '../../components/photoGallery/PhotoGallery';
 import Timeline from '../../components/timeline/timeline';
 import VitaComponent from '../../components/vita/vita';
+import GoogleMap from '../../components/googleMap';
 
 const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
@@ -27,6 +28,17 @@ const Poet = ({ data, intl }) => {
       />
       <Timeline poet={poet} />
       {images !== null && <PhotoGallery gallery={images} />}
+      <div
+        style={{
+          width: '400px',
+          height: '300px',
+          backgroundColor: 'grey',
+        }}
+      >
+        <div>
+          <GoogleMap />
+        </div>
+      </div>
     </Layout>
   );
 };
