@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { lightBlue } from '@material-ui/core/colors';
-
 import styles from './authorOfTheDay.module.css';
-
 
 const ColorButton = withStyles(theme => ({
   root: {
@@ -17,7 +15,6 @@ const ColorButton = withStyles(theme => ({
     },
   },
 }))(Button);
-
 
 const AuthorOfTheDay = ({ poets }) => {
   const date = new Date();
@@ -34,7 +31,7 @@ const AuthorOfTheDay = ({ poets }) => {
   const poetOfTheDay = poetsUnique[index].node;
 
   return (
-    <div className={styles.author}>
+    <section className={styles.author}>
       <h2 className={styles.author_title}>
         <FormattedMessage id="author_of_the_day_title" />
       </h2>
@@ -53,13 +50,11 @@ const AuthorOfTheDay = ({ poets }) => {
           <FormattedMessage id="button" />
         </ColorButton>
       </Link>
-    </div>
+    </section>
   );
 };
 
-
 export default injectIntl(AuthorOfTheDay);
-
 
 AuthorOfTheDay.propTypes = {
   poets: PropTypes.arrayOf({

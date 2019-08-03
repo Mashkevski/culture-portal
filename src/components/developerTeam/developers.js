@@ -9,12 +9,13 @@ import Member from './member';
 
 
 const Developers = ({ team }) => (
-  <div className={styles.team_wrap}>
-    <h3>{team.title}</h3>
-
-    {team.developers.map(developer => (
-      <Member developer={developer} avatarDefault={team.avatarDefault} key={developer.fullName} />
-    ))}
+  <div className={styles.container}>
+    <h2 className={styles.title}>{team.title}</h2>
+    <ul className={styles.team}>
+      {team.developers.map(developer => (
+        <Member developer={developer} avatarDefault={team.avatarDefault} key={developer.fullName} />
+      ))}
+    </ul>
   </div>
 );
 
