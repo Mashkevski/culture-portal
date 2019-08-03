@@ -1,6 +1,8 @@
 .team-wrap {
     margin-top: 20px;
-	text-align: center;
+    text-align: center;
+    
+    height: 300px;
 }
 
 .developer{
@@ -38,4 +40,8 @@
     font-size: 0.8em;
     font-style: italic;
     line-height: 1.1;
+}
+
+.avatar-developer {
+    width: 100%;
 }

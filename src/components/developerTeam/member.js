@@ -16,7 +16,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Member = ({ developer, avatarDefault }) => (
   <div className="developer" key={developer.fullName}>
-    <img src={developer.url || avatarDefault} alt="avatar" />
+    <img className="avatar-developer" src={developer.url || avatarDefault} alt="avatar" />
     <p>{developer.fullName}</p>
     <a href={`https://github.com/${developer.github}`}>
       <p className="developer-github">
