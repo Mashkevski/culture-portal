@@ -18,19 +18,19 @@ const TimelineComponent = ({
   } else if (id === 'brovka') {
     widthForImage = 220;
     heightForImage = 280;
-    gridTemplatesRowsForVita = '26% 74%';
+    gridTemplatesRowsForVita = '30% 70%';
   } else if (id === 'volosevich') {
     widthForImage = 220;
     heightForImage = 260;
-    gridTemplatesRowsForVita = '46% 54%';
+    gridTemplatesRowsForVita = '38% 50%';
   } else if (id === 'verba') {
     widthForImage = 240;
     heightForImage = 300;
-    gridTemplatesRowsForVita = '46% 54%';
+    gridTemplatesRowsForVita = '60% 40%';
   } else if (id === 'krapiva') {
     widthForImage = 240;
     heightForImage = 300;
-    gridTemplatesRowsForVita = '29% 71%';
+    gridTemplatesRowsForVita = '20% 80%';
   } else {
     widthForImage = 250;
     heightForImage = 340;

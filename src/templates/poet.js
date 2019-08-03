@@ -17,15 +17,28 @@ const Poet = ({ data, intl }) => {
   const places = timelineData.filter(place => place.lng && place.lat);
   return (
     <Layout>
-      <VitaComponent
-        img={image.file.url}
-        name={poet.name}
-        liveDates={poet.date}
-        lng={poet.lng}
-        birthPlace={poet.birthPlace}
-        vita={poet.vita}
-        id={idOfAuthor}
-      />
+      {idOfAuthor !== '' ? (
+        <VitaComponent
+          img={image.file.url}
+          name={poet.name}
+          liveDates={poet.date}
+          lng={poet.lng}
+          birthPlace={poet.birthPlace}
+          vita={poet.vita}
+          id={idOfAuthor}
+        />
+      ) : (
+        <VitaComponent
+          img={image.file.url}
+          name={poet.name}
+          liveDates={poet.date}
+          lng={poet.lng}
+          birthPlace={poet.birthPlace}
+          vita={poet.vita}
+          id="verba"
+        />
+      )
+      }
       <Timeline poet={poet} />
       {images && <PhotoGallery gallery={images} />}
       <div
