@@ -3,30 +3,24 @@ import React from 'react';
 import { injectIntl } from 'gatsby-plugin-intl';
 import propTypes from 'prop-types';
 
-import './developerTeamStyle.css';
-
-// import iconGitHub from '../../team/developerTeam/GitHub32.png';
-
-// import iconGitHub from '../../data/developerTeam/GitHub32.png';
-
-// import developerTeam from './developerTeamEn.json';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import styles from './developerTeamStyle.module.css';
+
+
 const Member = ({ developer, avatarDefault }) => (
-  <div className="developer" key={developer.fullName}>
-    <img className="avatar-developer" src={developer.url || avatarDefault} alt="avatar" />
+  <div className={styles.developer} key={developer.fullName}>
+    <img className={styles.avatar_developer} src={developer.url || avatarDefault} alt="avatar" />
     <p>{developer.fullName}</p>
     <a href={`https://github.com/${developer.github}`}>
-      <p className="developer-github">
+      <p className={styles.developer_github}>
         <span><FontAwesomeIcon icon={faGithub} /></span>
         {` ${developer.github}`}
       </p>
-      {/* <img src={iconGitHub} alt="git hub" /> */}
     </a>
-    <div className="kind-work">
-      <p className="">
+    <div className={styles.kind_work}>
+      <p>
         {developer.contribution}
       </p>
     </div>

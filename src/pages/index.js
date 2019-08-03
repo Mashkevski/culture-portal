@@ -7,27 +7,17 @@ import AuthorOfTheDay from '../components/authorOfTheDay/authorOfTheDay';
 
 import Developers from '../components/developerTeam/developers';
 
-import developerTeam from '../components/developerTeam/developerTeamEn.json';
+import developerTeam from '../data/team';
 
 const IndexPage = ({ data, intl }) => {
   const initialPoets = useState(
     data.allContentfulPoetDescription.edges.filter(edge => edge.node.poet.lng === intl.locale),
   )[0];
   const [poets] = useState(initialPoets);
-
-  // return (
-  //   <Layout>
-  //     <AuthorOfTheDay poets={poets} />
-
-  /* const IndexPage = ({ data }) => {
-  const { poet, image } = data.contentfulPoetDescription;
-  const { url } = image.file; */
-  // const { developerTeam } = data;
-
   return (
     <Layout>
       <AuthorOfTheDay poets={poets} />
-      <Developers team={developerTeam} />
+      <Developers team={developerTeam[intl.locale]} />
     </Layout>
   );
 };
@@ -85,15 +75,4 @@ IndexPage.propTypes = {
       'search.nothing': propTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-
-  // developerTeam: propTypes.shape({
-  //   title: propTypes.string.isRequired,
-  //   developers: propTypes.arrayOf(propTypes.shape({
-  //     fullName: propTypes.string,
-  //     github: propTypes.string,
-  //     url: propTypes.string,
-  //     contribution: propTypes.string,
-  //   })),
-  //   avatarDefault: propTypes.string,
-  // }),
 };

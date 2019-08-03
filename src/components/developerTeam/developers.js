@@ -3,48 +3,17 @@ import React from 'react';
 import { injectIntl } from 'gatsby-plugin-intl';
 import propTypes from 'prop-types';
 
-
-import './developerTeamStyle.css';
-
-
-// import iconGitHub from '../../team/developerTeam/GitHub32.png';
-
-// import iconGitHub from '../../data/developerTeam/GitHub32.png';
-
-// import developerTeam from './developerTeamEn.json';
-
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import styles from './developerTeamStyle.module.css';
 
 import Member from './member';
 
-// const team = developerTeam;
 
 const Developers = ({ team }) => (
-  <div className="team-wrap">
+  <div className={styles.team_wrap}>
     <h3>{team.title}</h3>
 
     {team.developers.map(developer => (
-      <Member developer={developer} avatarDefault={team.avatarDefault} />
-
-      // <div className="developer" key={developer.fullName}>
-
-      //   <img src={developer.url || team.avatarDefault} alt="avatar" />
-      //   <p>{developer.fullName}</p>
-      //   <a href={`https://github.com/${developer.github}`}>
-      //     <p className="developer-github">
-      //       <span><FontAwesomeIcon icon={faGithub} /></span>
-      //       {` ${developer.github}`}
-      //     </p>
-      //     {/* <img src={iconGitHub} alt="git hub" /> */}
-      //   </a>
-      //   <div className="kind-work">
-      //     <p className="">
-      //       {developer.contribution}
-      //     </p>
-      //   </div>
-      // </div>
+      <Member developer={developer} avatarDefault={team.avatarDefault} key={developer.fullName} />
     ))}
   </div>
 );
