@@ -48,7 +48,7 @@ const useStyles = makeStyles({
     textAlign: 'left',
     marginBottom: '0',
     background: '#039be5',
-    padding: '8px 38px 0 38px',
+    padding: '8px 27px 0 38px',
   },
   containerVitaFirstCh: {
     color: '#000',

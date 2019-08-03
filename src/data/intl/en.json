@@ -1,7 +1,15 @@
 {
   "siteTitle": "Poets of Belarus",
   "home": "Home",
-  "search": "Search",
+  "poets": "Poets",
   "author_of_the_day_title": "Author of the day",
-  "button": "Read more"
+  "button": "Read more",
+  "search": {
+    "value": "Search",
+    "params": {
+      "name": "By name",
+      "birthPlace": "By birth place"
+    },
+    "nothing": "Nothing found"
+  }
 }

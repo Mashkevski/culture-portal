@@ -1,7 +1,15 @@
 {
   "siteTitle": "Паэты Беларусi",
   "home": "Галоуная",
-  "search": "Пошук",
+  "poets": "Паэты",
   "author_of_the_day_title": "Аўтар дня",
-  "button": "Падрабязна"
+  "button": "Падрабязна",
+  "search": {
+    "value": "Пошук",
+    "params": {
+      "name": "Па імя",
+      "birthPlace": "Па месцы нараджэння"
+    },
+    "nothing": "Нічога не знойдзена"
+  }
 }

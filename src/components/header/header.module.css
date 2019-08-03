@@ -1,0 +1,24 @@
+.logo {
+  font-size: 28px;
+}
+
+.mobile_menu {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .link {
+    display: none;
+  }
+  .mobile_menu {
+    display: block;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .logo {
+    font-size: 22px;
+  }
+}
+
