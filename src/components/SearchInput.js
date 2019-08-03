@@ -18,8 +18,9 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
   },
   input: {
-    minWidth: 315,
+    minWidth: 300,
     flex: 1,
+    marginBottom: 10,
   },
   select: {
     marginLeft: 10,
