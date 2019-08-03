@@ -10,7 +10,7 @@
     "date photo"
     "vita photo"
     "button photo";
-  width: 80%;
+  max-width: 80%;
   margin: 0 auto;
   border: 1px solid #039BE5;
 }

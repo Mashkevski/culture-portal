@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import AuthorOfTheDay from '../components/authorOfTheDay/authorOfTheDay';
 
-const IndexPage = ({ data }) => {
-  const { poet, image } = data.contentfulPoetDescription;
-  const { url } = image.file;
+const IndexPage = ({ data, intl }) => {
+  const initialPoets = useState(
+    data.allContentfulPoetDescription.edges.filter(edge => edge.node.poet.lng === intl.locale),
+  )[0];
+  const [poets] = useState(initialPoets);
+
   return (
     <Layout>
-      <AuthorOfTheDay poet={poet} url={url} />
+      <AuthorOfTheDay poets={poets} />
     </Layout>
   );
 };
@@ -18,16 +21,22 @@ const IndexPage = ({ data }) => {
 export default injectIntl(IndexPage);
 
 export const query = graphql`
-  query IndexQuery {
-    contentfulPoetDescription(title: {eq: "glebka"}, poet: {lng: {eq: "en"}}) {
-      poet {
-        date
-        name
-        vita
-      }
-      image {
-        file {
-          url
+    query IndexQuery {
+    allContentfulPoetDescription {
+      edges {
+        node {
+          poet {
+            date
+            name
+            vita
+            lng
+          }
+          image {
+            file {
+              url
+            }
+          }
+          title
         }
       }
     }
@@ -36,22 +45,28 @@ export const query = graphql`
 
 IndexPage.propTypes = {
   data: propTypes.shape({
-    contentfulPoetDescription: propTypes.shape({
-      image: propTypes.shape({
-        file: propTypes.shape({
-          url: propTypes.string.isRequired,
-        }),
-      }),
-      poet: propTypes.shape({
-        name: propTypes.string,
-        vita: propTypes.string,
-        date: propTypes.string,
-      }),
-
-    }),
-  }),
-};
-
-IndexPage.defaultProps = {
-  data: null,
+    allContentfulPoetDescription: propTypes.shape({
+      edges: propTypes.arrayOf(
+        propTypes.shape({
+          node: propTypes.shape({
+            poet: propTypes.shape({
+              id: propTypes.string.isRequired,
+              name: propTypes.string.isRequired,
+              date: propTypes.string.isRequired,
+              birthPlace: propTypes.string.isRequired,
+              vita: propTypes.string.isRequired,
+              lng: propTypes.string.isRequired,
+            }).isRequired,
+            title: propTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+  intl: propTypes.shape({
+    locale: propTypes.string.isRequired,
+    messages: propTypes.shape({
+      'search.nothing': propTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
