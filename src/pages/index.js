@@ -5,18 +5,23 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import AuthorOfTheDay from '../components/authorOfTheDay/authorOfTheDay';
 
+import Developers from '../components/developerTeam/developers';
+
+import developerTeam from '../data/team';
+
 const IndexPage = ({ data, intl }) => {
   const initialPoets = useState(
     data.allContentfulPoetDescription.edges.filter(edge => edge.node.poet.lng === intl.locale),
   )[0];
   const [poets] = useState(initialPoets);
-
   return (
     <Layout>
       <AuthorOfTheDay poets={poets} />
+      <Developers team={developerTeam[intl.locale]} />
     </Layout>
   );
 };
+
 
 export default injectIntl(IndexPage);
 
@@ -62,6 +67,7 @@ IndexPage.propTypes = {
         }).isRequired,
       ).isRequired,
     }).isRequired,
+
   }).isRequired,
   intl: propTypes.shape({
     locale: propTypes.string.isRequired,

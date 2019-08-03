@@ -1,0 +1,47 @@
+.team_wrap {
+    margin-top: 20px;
+    text-align: center;
+    
+    height: 300px;
+}
+
+.developer {
+    vertical-align: top;
+	text-align: center;
+	font-size: 0.8em;
+	height: 300px;
+	width: 160px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	display: inline-block;
+    margin: 5px;
+    margin-top: 10px;
+    background-color: rgba(209, 235, 231, 0.5);
+}
+.developer:hover {
+	box-shadow: 0 0 10px rgba(162, 10, 223, 0.5);
+}
+.developer a p:hover,
+.developer a img:hover {
+    color: purple;
+}
+
+.developer_github {
+	color: grey;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.developer_github span {
+    color: black;
+}
+
+.kind_work {
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+.avatar_developer {
+    width: 100%;
+}
