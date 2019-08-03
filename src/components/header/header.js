@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     height: 50,
-    padding: '10px 20px',
+    padding: '10px 10px',
   },
   rightMenu: {
     display: 'flex',

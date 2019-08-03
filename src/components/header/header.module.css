@@ -12,6 +12,7 @@
   }
   .mobile_menu {
     display: block;
+    margin-left: 10px;
   }
 }
 
