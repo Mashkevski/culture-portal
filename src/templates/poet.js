@@ -14,36 +14,21 @@ const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
   const { poet, image, images } = node;
-  const idOfAuthor = poet.img.replace(/.jpg/gi, '');
   const { timelineData } = node.poet;
   const places = timelineData.filter(place => place.lng && place.lat);
   return (
     <Layout>
-      {idOfAuthor !== '' ? (
-        <VitaComponent
-          img={image.file.url}
-          name={poet.name}
-          liveDates={poet.date}
-          lng={poet.lng}
-          birthPlace={poet.birthPlace}
-          vita={poet.vita}
-          id={idOfAuthor}
-        />
-      ) : (
-        <VitaComponent
-          img={image.file.url}
-          name={poet.name}
-          liveDates={poet.date}
-          lng={poet.lng}
-          birthPlace={poet.birthPlace}
-          vita={poet.vita}
-          id="verba"
-        />
-      )
-      }
+      <VitaComponent
+        img={image.file.url}
+        name={poet.name}
+        liveDates={poet.date}
+        birthPlace={poet.birthPlace}
+        vita={poet.vita}
+        size={image.file.details.image}
+      />
       <Timeline poet={poet} />
-      {images !== null && <PhotoGallery gallery={images} />}
-      {poet.videoId !== '' && <VideoComponent id={poet.videoId} />}
+      {images && <PhotoGallery gallery={images} />}
+      {poet.videoId.length && <VideoComponent id={poet.videoId} />}
       <div
         style={{
           width: '400px',
@@ -76,6 +61,7 @@ export const query = graphql`
       edges {
         node {
           poet {
+            id
             birthPlace
             date
             img
@@ -97,6 +83,12 @@ export const query = graphql`
           image {
             file {
               url
+              details {
+                image {
+                  height
+                  width
+                }
+              }
             }
           }
           images {
