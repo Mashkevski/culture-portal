@@ -19,6 +19,9 @@ const useStyles = makeStyles({
     gridGap: 20,
     marginTop: 20,
   },
+  nothing: {
+    textAlign: 'center',
+  },
 });
 
 const Poets = ({ data, intl }) => {
@@ -36,7 +39,7 @@ const Poets = ({ data, intl }) => {
           {
             poets.length
               ? poets.map(({ node }) => <PoetCard key={node.poet.id} data={node} />)
-              : <h3>{ intl.messages['search.nothing'] }</h3>
+              : <h3 className={classes.nothing}>{ intl.messages['search.nothing'] }</h3>
           }
         </div>
       </div>

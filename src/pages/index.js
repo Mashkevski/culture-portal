@@ -26,7 +26,7 @@ const IndexPage = ({ data, intl }) => {
         <h2
           style={{
             textTransform: 'uppercase',
-            paddingBottom: '40px',
+            paddingBottom: '10px',
             textAlign: 'center',
             fontFamily: 'sans-serif',
           }}
