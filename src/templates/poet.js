@@ -2,16 +2,17 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
-
 import Layout from '../components/layout/layout';
 import PhotoGallery from '../components/photoGallery/PhotoGallery';
 import Timeline from '../components/timeline/timeline';
 import VitaComponent from '../components/vita/vita';
 import VideoComponent from '../components/youtubeWidget/youtubeComponent';
 import GoogleMap from '../components/googleMap';
+import ArtistWorks from '../components/artistsWorks/artistWorks';
 import styles from './poet.module.css';
 
 const Poet = ({ data, intl }) => {
+  console.log(data);
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
   const { poet, image, images } = node;
@@ -26,6 +27,7 @@ const Poet = ({ data, intl }) => {
         birthPlace={poet.birthPlace}
         vita={poet.vita}
       />
+      <ArtistWorks poet={poet} />
       <Timeline poet={poet} />
       {images !== null && <PhotoGallery gallery={images} />}
       {poet.videoId !== '' && <VideoComponent id={poet.videoId} />}
