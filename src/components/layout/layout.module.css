@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-img {
-  width: auto;
-}
-
 .container {
   margin: 0 auto;
   max-width: 1000px;

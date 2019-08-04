@@ -12,7 +12,6 @@ import ArtistWorks from '../components/artistsWorks/artistWorks';
 import styles from './poet.module.css';
 
 const Poet = ({ data, intl }) => {
-  console.log(data);
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
   const { poet, image, images } = node;
