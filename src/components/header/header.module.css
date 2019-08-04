@@ -1,5 +1,6 @@
 .logo {
   font-size: 28px;
+  text-transform: uppercase;
 }
 
 .mobile_menu {
@@ -13,6 +14,8 @@
   .mobile_menu {
     display: block;
     margin-left: 10px;
+    margin-top: -7px;
+    margin-right: -18px;
   }
 }
 

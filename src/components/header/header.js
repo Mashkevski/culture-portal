@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
+import { Link, injectIntl } from 'gatsby-plugin-intl';
+import propTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-
-import Language from '../language';
 import MobileMenu from '../mobileMenu/mobileMenu';
 import styles from './header.module.css';
 
@@ -11,7 +10,9 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     height: 50,
-    padding: '10px 10px',
+    margin: '0 auto',
+    maxWidth: 960,
+    padding: '35px 20px 20px 0',
   },
   rightMenu: {
     display: 'flex',
@@ -19,28 +20,26 @@ const useStyles = makeStyles({
     marginLeft: 'auto',
   },
   link: {
+    textTransform: 'uppercase',
     padding: 5,
-    fontSize: 20,
-    color: '#039BE5',
+    marginLeft: 25,
+    color: '#ffffff',
     textDecoration: 'none',
+    borderBottom: '2px solid transparent',
+    fontSize: 13,
   },
   activeLink: {
-    fontWeight: 'bold',
-    borderBottom: '2px solid #039BE5',
-  },
-  language: {
-    display: 'block',
-    marginLeft: 20,
+    borderBottom: '2px solid #039be5',
   },
 });
 
-const Header = () => {
+const Header = ({ intl }) => {
   const classes = useStyles();
   return (
     <header className={classes.header}>
       <Link to="/" className={classes.link}>
         <h1 className={`${classes.logo} ${styles.logo}`}>
-          <FormattedMessage id="siteTitle" />
+          {intl.messages.siteTitle}
         </h1>
       </Link>
       <nav className={classes.rightMenu}>
@@ -49,18 +48,15 @@ const Header = () => {
           className={`${classes.link} ${styles.link}`}
           activeClassName={classes.activeLink}
         >
-          <FormattedMessage id="home" />
+          {intl.messages.home}
         </Link>
         <Link
           to="/poets"
           className={`${classes.link} ${styles.link}`}
           activeClassName={classes.activeLink}
         >
-          <FormattedMessage id="poets" />
+          {intl.messages.poets}
         </Link>
-        <div className={classes.language}>
-          <Language />
-        </div>
         <div className={styles.mobile_menu}>
           <MobileMenu />
         </div>
@@ -70,3 +66,13 @@ const Header = () => {
 };
 
 export default injectIntl(Header);
+
+Header.propTypes = {
+  intl: propTypes.shape({
+    messages: propTypes.shape({
+      siteTitle: propTypes.string.isRequired,
+      home: propTypes.string.isRequired,
+      poets: propTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};

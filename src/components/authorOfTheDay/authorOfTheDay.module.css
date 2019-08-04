@@ -3,23 +3,27 @@
 }
 
 .author {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-left: 40px;
+  padding-right: 40px;
   display: grid;
   grid-template-areas:
-    "header header"
+    "header photo"
     "name photo"
     "date photo"
     "vita photo"
     "button photo";
-  max-width: 80%;
-  margin: 0 auto;
-  border: 1px solid #039BE5;
+  margin-bottom:  100px;
+  background-color: #e6e6e6;
 }
 
 .author_title {
+  text-transform: uppercase;
   grid-area: header;
   padding: 10px;
-  color: white;
-  background-color: #039BE5;
+  font-family: sans-serif;
+  border-bottom: 1px solid #3b3b3b;
 }
 
 .author_name {
@@ -43,6 +47,8 @@
   grid-area: photo;
   max-height: 300px;
   padding: 10px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .author_btn {

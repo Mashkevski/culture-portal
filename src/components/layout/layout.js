@@ -1,12 +1,20 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import Header from '../header/header';
-import './layout.css';
+import styles from './layout.module.css';
+import Language from '../language';
 
 const Layout = ({ children }) => (
   <>
-    <Header />
-    <main className="page-main">
+    <div className={styles.header}>
+      <div className={styles.language}>
+        <div className={styles.container}>
+          <Language />
+        </div>
+      </div>
+      <Header />
+    </div>
+    <main>
       {children}
     </main>
   </>

@@ -1,9 +1,8 @@
-/* eslint-disable react/button-has-type */
 import React from 'react';
 import ModalVideo from 'react-modal-video';
 import propTypes from 'prop-types';
 import 'react-modal-video/css/modal-video.min.css';
-import './youtubeComponentStyles.css';
+import styles from './youtubeComponent.module.css';
 
 class VideoComponent extends React.Component {
   constructor(props) {
@@ -22,9 +21,9 @@ class VideoComponent extends React.Component {
     const { isOpen } = this.state;
     const { id } = this.props;
     return (
-      <div className="parent-of-video">
+      <div className={styles.parent}>
         <ModalVideo channel="youtube" className="modalVideoIframeWrap" isOpen={isOpen} videoId={id} onClose={() => this.setState({ isOpen: false })} />
-        <button onClick={this.openModal} className="button">Watch the video about poet</button>
+        <button type="button" onClick={this.openModal} className={styles.button}>Watch the video about poet</button>
       </div>
     );
   }

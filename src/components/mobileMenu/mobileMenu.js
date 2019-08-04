@@ -49,7 +49,7 @@ export default function mobileMenu() {
             aria-haspopup="true"
             onClick={handleClick}
           >
-            <MoreVertIcon />
+            <MoreVertIcon color="primary" />
           </IconButton>
           <Menu
             id="mobile-menu"

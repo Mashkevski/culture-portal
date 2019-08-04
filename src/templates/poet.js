@@ -9,6 +9,7 @@ import Timeline from '../components/timeline/timeline';
 import VitaComponent from '../components/vita/vita';
 import VideoComponent from '../components/youtubeWidget/youtubeComponent';
 import GoogleMap from '../components/googleMap';
+import styles from './poet.module.css';
 
 const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
@@ -16,6 +17,7 @@ const Poet = ({ data, intl }) => {
   const { poet, image, images } = node;
   const { timelineData } = node.poet;
   const places = timelineData.filter(place => place.lng && place.lat);
+  console.dir(node);
   return (
     <Layout>
       <VitaComponent
@@ -24,18 +26,11 @@ const Poet = ({ data, intl }) => {
         liveDates={poet.date}
         birthPlace={poet.birthPlace}
         vita={poet.vita}
-        size={image.file.details.image}
       />
       <Timeline poet={poet} />
-      {images && <PhotoGallery gallery={images} />}
-      {poet.videoId.length && <VideoComponent id={poet.videoId} />}
-      <div
-        style={{
-          width: '400px',
-          height: '300px',
-          backgroundColor: 'grey',
-        }}
-      >
+      {images !== null && <PhotoGallery gallery={images} />}
+      {poet.videoId !== '' && <VideoComponent id={poet.videoId} />}
+      <div className={styles.map}>
         <GoogleMap places={places} />
       </div>
     </Layout>
@@ -83,12 +78,6 @@ export const query = graphql`
           image {
             file {
               url
-              details {
-                image {
-                  height
-                  width
-                }
-              }
             }
           }
           images {

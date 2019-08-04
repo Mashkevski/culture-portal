@@ -1,47 +1,87 @@
-.team_wrap {
-    margin-top: 20px;
-    text-align: center;
-    
-    height: 300px;
+.team {
+  display: grid;
+  justify-content: flex-end;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, 160px);
+}
+
+@media only screen and (max-width: 1000px) {
+  .team {
+    grid-template-columns: repeat(3, 160px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .team {
+    grid-template-columns: repeat(2, 160px);
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .team {
+    grid-template-columns: repeat(1, 160px);
+  }
 }
 
 .developer {
-    vertical-align: top;
-	text-align: center;
-	font-size: 0.8em;
+  vertical-align: top;
+  text-align: center;
+	font-size: 0.9em;
 	height: 300px;
 	width: 160px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	display: inline-block;
-    margin: 5px;
-    margin-top: 10px;
-    background-color: rgba(209, 235, 231, 0.5);
+  margin: 5px;
+  margin-top: 10px;
+  background-color: rgba(209, 235, 231, 0.5);
 }
+
+.developer p {
+  margin-bottom: 15px;
+}
+
 .developer:hover {
-	box-shadow: 0 0 10px rgba(162, 10, 223, 0.5);
+	box-shadow: 0 0 10px #7194a5;
 }
+
 .developer a p:hover,
 .developer a img:hover {
-    color: purple;
+    color: #039be5;
 }
 
 .developer_github {
 	color: grey;
-    font-weight: bold;
-    font-size: 0.8em;
+  font-weight: bold;
 }
 
 .developer_github span {
-    color: black;
+  color: black;
 }
 
 .kind_work {
-    margin-top: 10px;
-    font-size: 0.8em;
-    font-style: italic;
-    line-height: 1.1;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-style: italic;
+  line-height: 1.1;
 }
 
 .avatar_developer {
-    width: 100%;
+  width: 100%;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 50px;
+  max-width: 1000px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
