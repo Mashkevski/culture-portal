@@ -9,6 +9,7 @@ import Timeline from '../components/timeline/timeline';
 import VitaComponent from '../components/vita/vita';
 import VideoComponent from '../components/youtubeWidget/youtubeComponent';
 import GoogleMap from '../components/googleMap';
+import styles from './poet.module.css';
 
 const Poet = ({ data, intl }) => {
   const { node } = data.allContentfulPoetDescription.edges
@@ -44,13 +45,7 @@ const Poet = ({ data, intl }) => {
       <Timeline poet={poet} />
       {images !== null && <PhotoGallery gallery={images} />}
       {poet.videoId !== '' && <VideoComponent id={poet.videoId} />}
-      <div
-        style={{
-          width: '400px',
-          height: '300px',
-          backgroundColor: 'grey',
-        }}
-      >
+      <div className={styles.map}>
         <GoogleMap places={places} />
       </div>
     </Layout>
