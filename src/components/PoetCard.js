@@ -6,7 +6,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -16,7 +15,6 @@ const useStyles = makeStyles({
 });
 
 const PoetCard = ({ data }) => {
-  const matches = useMediaQuery('(min-width: 600px)');
   const classes = useStyles();
   return (
     <Card>
@@ -25,13 +23,13 @@ const PoetCard = ({ data }) => {
           {data.poet.name}
         </Typography>
         <Typography variant="subtitle1" color="textSecondary">
-          {matches ? data.poet.date : ''}
+          {data.poet.date}
         </Typography>
         <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-          {matches ? data.poet.birthPlace : ''}
+          {data.poet.birthPlace}
         </Typography>
         <Typography variant="body1" component="p">
-          {matches ? data.poet.vita : ''}
+          {data.poet.vita}
         </Typography>
       </CardContent>
       <CardActions>

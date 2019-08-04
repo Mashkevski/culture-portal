@@ -18,8 +18,8 @@ const IndexPage = ({ data, intl }) => {
     <Layout>
       <section
         style={{
-          padding: '50px 30px 0',
-          margin: '0 auto 80px',
+          padding: '30px 30px 0',
+          margin: '0 auto 50px',
           maxWidth: '1000px',
         }}
       >
