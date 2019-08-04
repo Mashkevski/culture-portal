@@ -20,15 +20,9 @@ const AuthorOfTheDay = ({ poets }) => {
   const date = new Date();
   const day = date.getDate();
   const index = day % poets.length;
-  const poetsUnique = poets.filter(
-    (currentPoet, poetIndex, poetsArray) => poetIndex === poetsArray.findIndex(
-      testedPoet => (
-        testedPoet.node.title === currentPoet.node.title),
-    ),
-  );
 
-  poetsUnique.sort((a, b) => (a.node.title > b.node.title ? 1 : -1));
-  const poetOfTheDay = poetsUnique[index].node;
+  poets.sort((a, b) => (a.node.title > b.node.title ? 1 : -1));
+  const poetOfTheDay = poets[index].node;
 
   return (
     <section className={styles.author}>
@@ -57,17 +51,21 @@ const AuthorOfTheDay = ({ poets }) => {
 export default injectIntl(AuthorOfTheDay);
 
 AuthorOfTheDay.propTypes = {
-  poets: PropTypes.arrayOf({
-    poet: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      vita: PropTypes.string.isRequired,
-    }).isRequired,
-    image: PropTypes.shape({
-      file: PropTypes.shape({
-        url: PropTypes.string.isRequired,
+  poets: PropTypes.arrayOf(
+    PropTypes.shape({
+      node: PropTypes.shape({
+        poet: PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          date: PropTypes.string.isRequired,
+          vita: PropTypes.string.isRequired,
+        }).isRequired,
+        image: PropTypes.shape({
+          file: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+          }),
+        }).isRequired,
+        title: PropTypes.string.isRequired,
       }),
-    }).isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
+    }),
+  ).isRequired,
 };

@@ -2,55 +2,32 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import propTypes from 'prop-types';
 import { injectIntl } from 'gatsby-plugin-intl';
-
 import Layout from '../components/layout/layout';
 import PhotoGallery from '../components/photoGallery/PhotoGallery';
 import Timeline from '../components/timeline/timeline';
 import VitaComponent from '../components/vita/vita';
 import VideoComponent from '../components/youtubeWidget/youtubeComponent';
 import GoogleMap from '../components/googleMap';
-import styles from './poet.module.css';
-
 import ArtistWorks from '../components/artistsWorks/artistWorks';
+import styles from './poet.module.css';
 
 const Poet = ({ data, intl }) => {
   console.log(data);
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
   const { poet, image, images } = node;
-  const idOfAuthor = poet.img.replace(/.jpg/gi, '');
   const { timelineData } = node.poet;
   const places = timelineData.filter(place => place.lng && place.lat);
-  console.dir(node);
   return (
     <Layout>
-      {idOfAuthor !== '' ? (
-        <VitaComponent
-          img={image.file.url}
-          name={poet.name}
-          liveDates={poet.date}
-          lng={poet.lng}
-          birthPlace={poet.birthPlace}
-          vita={poet.vita}
-          id={idOfAuthor}
-        />
-      ) : (
-        <VitaComponent
-          img={image.file.url}
-          name={poet.name}
-          liveDates={poet.date}
-          lng={poet.lng}
-          birthPlace={poet.birthPlace}
-          vita={poet.vita}
-          id="verba"
-        />
-      )
-      }
-      <ArtistWorks
-        poet={poet}
+      <VitaComponent
+        img={image.file.url}
+        name={poet.name}
+        liveDates={poet.date}
+        birthPlace={poet.birthPlace}
+        vita={poet.vita}
       />
-
-
+      <ArtistWorks poet={poet} />
       <Timeline poet={poet} />
       {images !== null && <PhotoGallery gallery={images} />}
       {poet.videoId !== '' && <VideoComponent id={poet.videoId} />}
@@ -80,6 +57,7 @@ export const query = graphql`
       edges {
         node {
           poet {
+            id
             birthPlace
             date
             img

@@ -16,7 +16,6 @@ const useStyles = makeStyles({
   },
   poets: {
     display: 'grid',
-    justifyContent: 'center',
     gridGap: 20,
     marginTop: 20,
   },
@@ -30,7 +29,7 @@ const Poets = ({ data, intl }) => {
 
   const classes = useStyles();
   return (
-    <Layout className={classes.layout}>
+    <Layout>
       <div className={classes.wrapper}>
         <SearchInput poets={initialPoets} setPoets={setPoets} />
         <div className={classes.poets}>
