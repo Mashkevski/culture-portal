@@ -20,15 +20,9 @@ const AuthorOfTheDay = ({ poets }) => {
   const date = new Date();
   const day = date.getDate();
   const index = day % poets.length;
-  const poetsUnique = poets.filter(
-    (currentPoet, poetIndex, poetsArray) => poetIndex === poetsArray.findIndex(
-      testedPoet => (
-        testedPoet.node.title === currentPoet.node.title),
-    ),
-  );
 
-  poetsUnique.sort((a, b) => (a.node.title > b.node.title ? 1 : -1));
-  const poetOfTheDay = poetsUnique[index].node;
+  poets.sort((a, b) => (a.node.title > b.node.title ? 1 : -1));
+  const poetOfTheDay = poets[index].node;
 
   return (
     <section className={styles.author}>
