@@ -26,6 +26,7 @@ const useStyles = makeStyles({
     color: '#ffffff',
     textDecoration: 'none',
     borderBottom: '2px solid transparent',
+    fontSize: 13,
   },
   activeLink: {
     borderBottom: '2px solid #039be5',

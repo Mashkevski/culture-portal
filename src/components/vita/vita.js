@@ -1,12 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { Container } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import useStyles from './vitaStyles';
 
 const TimelineComponent = ({
   img, vita, liveDates, birthPlace, name, lng, id,
 }) => {
   const classes = useStyles();
+  const matches = useMediaQuery('(min-width: 850px)');
   // it needs to change styles for size of image/block for vita
   let widthForImage;
   let heightForImage;
@@ -42,16 +44,23 @@ const TimelineComponent = ({
   else if (lng === 'ru') placeOfBirth = 'Место рождения:';
   return (
     <Container className={classes.mainContainer}>
-      <Container className={classes.containerWithImageAndInfo}>
-        <img
-          src={img}
-          alt="Sorry"
-          width={widthForImage}
-          height={heightForImage}
-          className={classes.containerImg}
-        />
+      <Container className={matches ? classes.containerWithImageAndInfo : ''}>
+        <div className={matches ? classes.containerImg : ''}>
+          <img
+            src={img}
+            alt="Sorry"
+            width={widthForImage}
+            height={heightForImage}
+            className={classes.Img}
+          />
+        </div>
         <h3
-          style={{ color: '#039be5', marginBottom: '5px' }}
+          style={{
+            color: '#039be5',
+            marginBottom: '5px',
+            textTransform: 'uppercase',
+            fontFamily: 'sans-serif',
+          }}
         >
           {name}
         </h3>

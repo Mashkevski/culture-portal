@@ -2,5 +2,18 @@
   position: relative;
   max-width: 1000px;
   height: 600px;
-  background-color: #808080;
+  background-color: #eeecec;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .map {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .map {
+    height: 300px;
+  }
 }

@@ -18,6 +18,7 @@ const Poet = ({ data, intl }) => {
   const idOfAuthor = poet.img.replace(/.jpg/gi, '');
   const { timelineData } = node.poet;
   const places = timelineData.filter(place => place.lng && place.lat);
+  console.dir(node);
   return (
     <Layout>
       {idOfAuthor !== '' ? (
