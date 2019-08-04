@@ -46,7 +46,7 @@ const AuthorOfTheDay = ({ poets }) => {
         {poetOfTheDay.poet.vita}
       </p>
       <Link to={`/${poetOfTheDay.title}`} className={styles.author_btn}>
-        <ColorButton variant="contained">
+        <ColorButton color="primary" variant="contained">
           <FormattedMessage id="button" />
         </ColorButton>
       </Link>
