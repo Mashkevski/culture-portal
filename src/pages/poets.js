@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     minWidth: 320,
     maxWidth: 800,
     margin: '0 auto',
-    padding: '0 10px',
+    padding: '10px 10px',
   },
   poets: {
     display: 'grid',
@@ -77,7 +77,7 @@ export default injectIntl(Poets);
 
 export const query = graphql`
   query searchQuery {
-    allContentfulPoetDescription {
+    allContentfulPoetDescription(filter: {node_locale: {eq: "en-US"}}) {
       edges {
         node {
           poet {
