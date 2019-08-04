@@ -17,7 +17,6 @@ const Poet = ({ data, intl }) => {
   const { poet, image, images } = node;
   const { timelineData } = node.poet;
   const places = timelineData.filter(place => place.lng && place.lat);
-  console.dir(node);
   return (
     <Layout>
       <VitaComponent

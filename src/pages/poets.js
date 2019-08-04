@@ -30,7 +30,7 @@ const Poets = ({ data, intl }) => {
 
   const classes = useStyles();
   return (
-    <Layout className={classes.layout}>
+    <Layout>
       <div className={classes.wrapper}>
         <SearchInput poets={initialPoets} setPoets={setPoets} />
         <div className={classes.poets}>
