@@ -17,6 +17,7 @@ const Language = () => (
       {({ languages, language: currentLocale }) => languages.map(language => (
         <button
           type="button"
+          key={language}
           onKeyDown={() => undefined}
           onClick={() => changeLocale(language)}
           style={{

@@ -51,17 +51,21 @@ const AuthorOfTheDay = ({ poets }) => {
 export default injectIntl(AuthorOfTheDay);
 
 AuthorOfTheDay.propTypes = {
-  poets: PropTypes.arrayOf({
-    poet: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      vita: PropTypes.string.isRequired,
-    }).isRequired,
-    image: PropTypes.shape({
-      file: PropTypes.shape({
-        url: PropTypes.string.isRequired,
+  poets: PropTypes.arrayOf(
+    PropTypes.shape({
+      node: PropTypes.shape({
+        poet: PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          date: PropTypes.string.isRequired,
+          vita: PropTypes.string.isRequired,
+        }).isRequired,
+        image: PropTypes.shape({
+          file: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+          }),
+        }).isRequired,
+        title: PropTypes.string.isRequired,
       }),
-    }).isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
+    }),
+  ).isRequired,
 };
