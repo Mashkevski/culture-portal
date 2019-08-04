@@ -10,7 +10,7 @@ import styles from './developerTeamStyle.module.css';
 
 
 const Member = ({ developer, avatarDefault }) => (
-  <div className={styles.developer} key={developer.fullName}>
+  <li className={styles.developer} key={developer.fullName}>
     <img className={styles.avatar_developer} src={developer.url || avatarDefault} alt="avatar" />
     <p>{developer.fullName}</p>
     <a href={`https://github.com/${developer.github}`}>
@@ -24,7 +24,7 @@ const Member = ({ developer, avatarDefault }) => (
         {developer.contribution}
       </p>
     </div>
-  </div>
+  </li>
 
 );
 

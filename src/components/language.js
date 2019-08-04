@@ -1,33 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl';
-import Select from '@material-ui/core/Select';
 
-const Language = () => {
-  const [selectValue, setSelectValue] = useState(window.location.pathname.split('/')[1]);
-
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setSelectValue(value);
-    changeLocale(value);
-  };
-
-  return (
-    <div>
-      <IntlContextConsumer>
-        {
-          ({ languages }) => (
-            <Select value={selectValue} onChange={handleChange} native>
-              {
-                languages.map(language => (
-                  <option key={language} value={language}>{ language }</option>
-                ))
-              }
-            </Select>
-          )
-        }
-      </IntlContextConsumer>
-    </div>
-  );
+const languageName = {
+  en: 'en',
+  ru: 'ru',
+  by: 'by',
 };
+
+const Language = () => (
+  <div
+    style={{
+      marginLeft: 'auto',
+    }}
+  >
+    <IntlContextConsumer>
+      {({ languages, language: currentLocale }) => languages.map(language => (
+        <button
+          type="button"
+          onKeyDown={() => undefined}
+          onClick={() => changeLocale(language)}
+          style={{
+            color: currentLocale === language ? '#039be5' : '#eeeeee',
+            margin: 10,
+            cursor: 'pointer',
+            backgroundColor: 'inherit',
+            border: 'none',
+          }}
+        >
+          {languageName[language]}
+        </button>
+      ))
+      }
+    </IntlContextConsumer>
+  </div>
+);
 
 export default Language;

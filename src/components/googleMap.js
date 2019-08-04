@@ -69,7 +69,7 @@ export const GeoWidget = ({ google, places }) => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: process.env.GOOGLE_MAP_API_KEY,
+  apiKey: 'AIzaSyBZAPk9Ycyt8Hir4-jJ7uQu5V9j7VoCvlQ',
 })(GeoWidget);
 
 GeoWidget.propTypes = {
