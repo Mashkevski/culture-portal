@@ -4,34 +4,35 @@
 ## Evaluation
 Points - **240**
 ### Min scope - **40**
-+/  **10** Main page + page with a list of authors + author's page (only html);
-+/  **10** Page with list of authors contains search widget;
-+/  **20** Portal has two languages;
++/  **10** Main page + page with a list of authors + author's page (only html);  
++/  **10** Page with list of authors contains search widget;  
++/  **20** Portal has two languages;  
 
 ### Normal scope - **130**
-+/  **10** Author's page contains timeline;
-+/  **10** Author's page contains video overlay;
-+/  **20** Author's page contains photo gallery;
-+/  **10** Author's page contains map (geowidget);
-+/  **40** Project is made using react;
-+/  **20** Design;
-+/  **20** material-ui / bootstrap is used 
++/  **10** Author's page contains timeline;  
++/  **10** Author's page contains video overlay;  
++/  **20** Author's page contains photo gallery;  
++/  **10** Author's page contains map (geowidget);  
++/  **40** Project is made using react;  
++/  **20** Design;  
++/  **20** material-ui / bootstrap is used;   
 
 ### Extra scope - **70**
-+/  **10** Confidence of the project presentation;
-+/  **30** Project is made using gatsbyjs;
-+/  **20** contentful / netlify cms is used for content management
-+/  **10** Portal has third language;
++/  **10** Confidence of the project presentation;    
++/  **30** Project is made using gatsbyjs;    
++/  **20** contentful / netlify cms is used for content management;    
++/  **10** Portal has third language;    
 
 ### Fines
-+/  5 commits from each active team member. Everyone should merge their own PRs. 
-+/   violations
-+/   worklog for team
-+/   design / UX
++/  5 commits from each active team member. Everyone should merge their own PRs.   
++/   violations  
++/   worklog for team  
++/   design / UX  
 ***
 ## Worklog
 
 *marinbonibon*
+
 | time spent | feature |
 |-------------|-------------|
 | 5h |	put poets' data in json |
@@ -44,6 +45,7 @@ Points - **240**
 
 
 *mashkevski*
+
 | time spent | feature |
 |-------------|-------------|
 | 3h |	base structure of the project with Gatsby |
@@ -55,6 +57,7 @@ Points - **240**
 
 
 *deminiro*
+
 | time spent | feature |
 |-------------|-------------|
 | 4h |	put poets data in json |
@@ -64,6 +67,7 @@ Points - **240**
 |	4h |	fix bugs and style improvement |
 
 *nickitasolovei*
+
 | time spent | feature |
 |-------------|-------------|
 | 2h |	put team data in json |
@@ -74,6 +78,7 @@ Points - **240**
 
 
 *blackmantle*
+
 | time spent | feature |
 |-------------|-------------|
 |	8h |	poets page with search |
