@@ -1,0 +1,30 @@
+.wrap {
+    margin-top: 10px;
+    display: flex;
+}
+
+.container {
+    flex: 0 1 500px;
+    margin: 0 auto;
+    height: 600px;
+    background-image: url(../../images/paperImg.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: inset 0px 0px 20px 20px white;
+}
+
+.container ul {
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+}
+
+.year {
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.container p {
+    margin-top: 5px;
+}

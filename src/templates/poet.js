@@ -11,7 +11,10 @@ import VideoComponent from '../components/youtubeWidget/youtubeComponent';
 import GoogleMap from '../components/googleMap';
 import styles from './poet.module.css';
 
+import ArtistWorks from '../components/artistsWorks/artistWorks';
+
 const Poet = ({ data, intl }) => {
+  console.log(data);
   const { node } = data.allContentfulPoetDescription.edges
     .find(edge => edge.node.poet.lng === intl.locale);
   const { poet, image, images } = node;
@@ -43,6 +46,11 @@ const Poet = ({ data, intl }) => {
         />
       )
       }
+      <ArtistWorks
+        poet={poet}
+      />
+
+
       <Timeline poet={poet} />
       {images !== null && <PhotoGallery gallery={images} />}
       {poet.videoId !== '' && <VideoComponent id={poet.videoId} />}
