@@ -16,7 +16,6 @@ const useStyles = makeStyles({
   },
   poets: {
     display: 'grid',
-    justifyContent: 'center',
     gridGap: 20,
     marginTop: 20,
   },
