@@ -12,7 +12,6 @@ const useStyles = makeStyles({
     height: 50,
     margin: '0 auto',
     maxWidth: 960,
-    padding: '35px 20px 20px 0',
   },
   rightMenu: {
     display: 'flex',
